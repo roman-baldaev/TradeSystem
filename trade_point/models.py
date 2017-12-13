@@ -19,7 +19,7 @@ class Workshop(models.Model):
         Table of workshops - sections of trade points
     """
     trade_point = models.ForeignKey('TradePoint', on_delete = models.CASCADE, null = False, default = None)
-    chief = models.ForeignKey('Employee', on_delete = models.CASCADE, null = False, default = None, related_name="Chief")
+    chief = models.ForeignKey('Employee', on_delete = models.CASCADE, null = True, default = None, related_name="Chief")
 
     def __str__(self):
         return 'id: ' + str(self.id) + ' ' + 'TP_id: ' + str(self.trade_point) \
